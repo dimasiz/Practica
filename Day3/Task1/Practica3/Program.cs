@@ -10,30 +10,22 @@ namespace Practica3
     {
         static void Main(string[] args)
         {
+          
             Console.Write("Введите a=");
             int a = int.Parse(Console.ReadLine());
 
             Console.Write("Введите b=");
             int b = int.Parse(Console.ReadLine());
 
-            double kube = Cubing(a,b);
-            double kulculation = Kalculation(a,b);
+            A demonstration = new A(a,b);
+
+            double kube = demonstration.Cubing(a,b);
+            double kulculation = demonstration.Kalculation(a,b);
 
             Console.WriteLine($"Метод возведения в куб:{kube}\nMетод решение выражения:{kulculation}");
             Console.ReadLine();
         }
 
-        public static double Kalculation(int a, int b)
-        {
-            double answer = ((3 * b) - (2 / Math.Pow(a,2)))/ 4;
-
-            return answer;
-        }
-
-        public static double Cubing(int a, int b)
-        {
-            double answer = Math.Pow(a - b, 3);
-            return answer;
-        }
+     
     }
 }
