@@ -23,6 +23,7 @@ namespace Practica3
             double kulculation = demonstration.Kalculation(a,b);
 
             Console.WriteLine($"Метод возведения в куб:{kube}\nMетод решение выражения:{kulculation}");
+            
             Console.ReadLine();
         }
 
