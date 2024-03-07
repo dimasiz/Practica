@@ -46,15 +46,15 @@ namespace Task3
                }
 
                 var maxNumber = item.Item2;
-                if (maxNumber > Minmax(C, D).Item2)
+                if (maxNumber < Minmax(C, D).Item2)
                 {
                     maxNumber = Minmax(C, D).Item2;
                 }
-                if (maxNumber > Minmax(A, C).Item2)
+                if (maxNumber < Minmax(A, C).Item2)
                 {
                     maxNumber = Minmax(A, D).Item2;
                 }
-                if (maxNumber > Minmax(B, D).Item2)
+                if (maxNumber < Minmax(B, D).Item2)
                 {
                     maxNumber = Minmax(B, D).Item2;
                 }
