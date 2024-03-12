@@ -48,9 +48,6 @@ namespace Task3
             mas4[0] = string.Join("", word1);
             string fourTask = string.Join(" ", mas4);
             Console.WriteLine($"четвертое задание:{fourTask}");
-
-
-
         }
     }
 }

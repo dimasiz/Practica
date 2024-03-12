@@ -24,8 +24,6 @@ namespace Task1
                     Console.WriteLine(word);
                 }
             }
-
-
         }
     }
 }
