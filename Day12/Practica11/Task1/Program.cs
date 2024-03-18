@@ -48,6 +48,8 @@ namespace Task1
                 count += SalaryWorker.GetSalary();
             }
             Console.WriteLine($"Общая выручка медсистер:{count}");
+
+            
         }
     }
 }
