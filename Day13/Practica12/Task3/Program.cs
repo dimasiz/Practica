@@ -17,7 +17,7 @@ namespace Task3
             stringAction += UppercaseString;
             stringAction += LowercaseString;
 
-            stringAction("Hello, world!");
+            stringAction("Hello world!");
         }
 
         public static void ReverseString(string text)
