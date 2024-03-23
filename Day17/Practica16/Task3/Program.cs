@@ -53,8 +53,8 @@ namespace Task3
             Console.WriteLine("Операции завершены.");
         }
 
-        
-        static void CreateFileWithData(string filePath)
+
+        public static void CreateFileWithData(string filePath)
         {
             string[] lines = {
             "Я календарь",
@@ -66,7 +66,7 @@ namespace Task3
             File.WriteAllLines(filePath, lines);
             Console.WriteLine("Файл успешно создан и заполнен данными.");
         }
-        static void PrintFileContents(string filePath)
+        public static void PrintFileContents(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines)
@@ -75,15 +75,15 @@ namespace Task3
             }
         }
 
-        
-        static int CountLines(string filePath)
+
+        public static int CountLines(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
             return lines.Length;
         }
 
-        
-        static void CountCharactersPerLine(string filePath)
+
+        public static void CountCharactersPerLine(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines)
@@ -93,8 +93,8 @@ namespace Task3
             }
         }
 
-        
-        static void DeleteLastLineAndSaveToFile(string originalFilePath, string newFilePath)
+
+        public static void DeleteLastLineAndSaveToFile(string originalFilePath, string newFilePath)
         {
             string[] lines = File.ReadAllLines(originalFilePath);
             string[] newLines = lines.Take(lines.Length - 1).ToArray();
@@ -102,8 +102,8 @@ namespace Task3
             Console.WriteLine("Последняя строка удалена и сохранена в новый файл.");
         }
 
-        
-        static void PrintLinesInRange(string filePath, int startLine, int endLine)
+
+        public static void PrintLinesInRange(string filePath, int startLine, int endLine)
         {
             string[] lines = File.ReadAllLines(filePath);
             for (int i = startLine - 1; i < endLine; i++)
@@ -112,8 +112,8 @@ namespace Task3
             }
         }
 
-       
-        static int FindMaxLength(string filePath)
+
+        public static int FindMaxLength(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
             int maxLength = 0;
@@ -128,7 +128,7 @@ namespace Task3
             return maxLength;
         }
 
-        static void PrintLinesStartingWithLetter(string filePath, char startingLetter)
+        public static void PrintLinesStartingWithLetter(string filePath, char startingLetter)
         {
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines)
@@ -140,7 +140,7 @@ namespace Task3
             }
         }
 
-        static void ReverseLinesAndSaveToFile(string filePath, string reversedFilePath)
+        public static void ReverseLinesAndSaveToFile(string filePath, string reversedFilePath)
         {
             string[] lines = File.ReadAllLines(filePath);
             Array.Reverse(lines);
