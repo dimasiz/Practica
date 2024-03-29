@@ -1,0 +1,83 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800
+        " Width="1139">
+    <Grid Margin="0,0,10,-6">
+        <Label x:Name="Label1" Content="Фамиля" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="Label2" Content="Имя" HorizontalAlignment="Left" Margin="49,41,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="Label3" Content="Оттчество" HorizontalAlignment="Left" Margin="49,72,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="SecondName" HorizontalAlignment="Left" Margin="157,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Margin="157,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left" Margin="157,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="Men" GroupName="Sex" Content="Мужчина" HorizontalAlignment="Left" Margin="577,36,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Women" GroupName="Sex" Content="Женщина" HorizontalAlignment="Left" Margin="577,70,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Day" HorizontalAlignment="Left" Margin="157,137,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label4" Content="День" HorizontalAlignment="Left" Margin="53,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.41" Width="64"/>
+        <ComboBox x:Name="Mouth" HorizontalAlignment="Left" Margin="367,137,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label5" Content="Месяц" HorizontalAlignment="Left" Margin="298,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.41" Width="64"/>
+        <ComboBox x:Name="Year" HorizontalAlignment="Left" Margin="589,135,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label4_Копировать1" Content="Год" HorizontalAlignment="Left" Margin="520,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.41" Width="64"/>
+
+        <GroupBox Header="Опыт работы" Margin="22,181,396,313">
+            <StackPanel Height="266">
+                <RadioButton Content="Без опыта" />
+                <RadioButton Content="Меньше года" />
+                <RadioButton Content="От 1 до 5 лет" />
+                <RadioButton Content="От 10 и более лет" />
+                <RadioButton Content="От 5 до 9 лет" />
+            </StackPanel>
+        </GroupBox>
+        <ComboBox x:Name="City" HorizontalAlignment="Left" Margin="157,323,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Место проживания" HorizontalAlignment="Left" Margin="22,323,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Адрес, Эл Почты" HorizontalAlignment="Left" Margin="292,323,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="Post" HorizontalAlignment="Left" Margin="402,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Number" Content="Номер" HorizontalAlignment="Left" Margin="532,323,0,0" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="Number1" HorizontalAlignment="Left" Margin="613,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <GroupBox Header="Предпочительный график работы" Margin="22,358,487,313" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.29"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.395"/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+            <StackPanel Height="148" Margin="0,0,19,0">
+                <RadioButton Content="Полная занятость" />
+                <RadioButton Content="Частичная занятость" />
+                <RadioButton Content="Работа на дому" />
+                <RadioButton Content="Посменная работа" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="Svedenina" Header="Другие сведения" Margin="22,506,396,159">
+            <StackPanel>
+                <CheckBox Content="Наличие личного авто" />
+                <CheckBox Content="A" />
+                <CheckBox Content="B" />
+                <CheckBox Content="C" />
+                <CheckBox Content="D" />
+            </StackPanel>
+        </GroupBox>
+        <Label x:Name="rezum" Content="Краткое резюме" Margin="848,72,147,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextShort" Margin="826,105,1,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="504"/>
+        <GroupBox Header="Объем зарплаты" Margin="915,639,41,48">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="От:" Margin="0,0,5,0" VerticalAlignment="Center" />
+                    <TextBox Width="100" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="До:" Margin="0,10,5,0" VerticalAlignment="Center" />
+                    <TextBox Width="100" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="Save" Content="Сохранить " HorizontalAlignment="Left" Margin="97,676,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="Save_Click"/>
+        <Button x:Name="Clear" Content="Очистить" HorizontalAlignment="Left" Margin="307,676,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="Clear_Click"/>
+    </Grid>
+</Window>
