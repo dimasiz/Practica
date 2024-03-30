@@ -1,0 +1,43 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Тип элемента:" Margin="10,58,687,319"/>
+        <TextBox x:Name="TypeTextBox" Margin="92,43,551,304" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.014"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Label Content="X:" Margin="10,173,754,227" RenderTransformOrigin="0.389,0.414" />
+        <TextBox x:Name="XTextBox" Margin="35,272,569,86"/>
+
+        <Label Content="Y:" Margin="10,292,705,103" />
+        <TextBox x:Name="YTextBox" Margin="35,166,569,186"/>
+
+        <Button Content="Создать элемент" Click="CreateControlButton_Click" Margin="357,52,218,313"/>
+
+        <ItemsControl x:Name="MainItemsControl" Margin="308,217,122,37">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>
