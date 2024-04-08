@@ -29,5 +29,10 @@ namespace WindowsFormsApp1
                 g.DrawLine(new Pen(Brushes.Black, 2),
                 10, 4 * i + 20, 200, 4 * i + 20);
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
