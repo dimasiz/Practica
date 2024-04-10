@@ -17,41 +17,60 @@ namespace WpfApp1
             InitializeComponent();
 
 
+
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\PracticaC#\Day32\WpfApp1\WpfApp1\bin\Debug\DBTur_firm1.mdb;Persist Security Info=False;";
 
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 connection.Open();
 
-                string selectQuery = "SELECT * FROM Туры";
+               
+                DataSet dataSet = new DataSet();
 
-                OleDbDataAdapter adapter = new OleDbDataAdapter(selectQuery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+               
+                string toursQuery = "SELECT * FROM Туры";
+                string touristsQuery = "SELECT * FROM Туристы";
 
-                dataGrid.ItemsSource = dataTable.DefaultView;
+                
+                DataTable toursTable = new DataTable("Туры");
+                DataTable touristsTable = new DataTable("Туристы");
 
+              
+                OleDbDataAdapter toursAdapter = new OleDbDataAdapter(toursQuery, connection);
+                toursAdapter.Fill(toursTable);
+
+                OleDbDataAdapter touristsAdapter = new OleDbDataAdapter(touristsQuery, connection);
+                touristsAdapter.Fill(touristsTable);
+                
+                dataSet.Tables.Add(toursTable);
+                dataSet.Tables.Add(touristsTable);
+
+                
+                dataGridTours.ItemsSource = dataSet.Tables["Туры"].DefaultView;
+                dataGridTourists.ItemsSource = dataSet.Tables["Туристы"].DefaultView;
+
+               
                 int tourCodeToDelete = 5;
                 string deleteTourQuery = "DELETE FROM Туры WHERE КодТура = TourCode";
                 OleDbCommand deleteTourCommand = new OleDbCommand(deleteTourQuery, connection);
-                deleteTourCommand.Parameters.AddWithValue("TourCode", tourCodeToDelete);
+                deleteTourCommand.Parameters.AddWithValue("@TourCode", tourCodeToDelete);
                 int deletedRows = deleteTourCommand.ExecuteNonQuery();
 
                 Console.WriteLine("Удалено {0} записей", deletedRows);
 
+
                 int touristIdToUpdate = 1;
                 string newName = "Антон";
-                string updateTouristQuery = "UPDATE Туристы SET Имя = Антон  WHERE TouristId = TouristId";
+                string updateTouristQuery = "UPDATE Туристы SET Имя = NewName WHERE TouristId = TouristId";
                 OleDbCommand updateTouristCommand = new OleDbCommand(updateTouristQuery, connection);
-                updateTouristCommand.Parameters.AddWithValue("Имя", newName);
+                updateTouristCommand.Parameters.AddWithValue("NewName", newName);
                 updateTouristCommand.Parameters.AddWithValue("TouristId", touristIdToUpdate);
                 int updatedRows = updateTouristCommand.ExecuteNonQuery();
 
                 Console.WriteLine("Изменено {0} записей", updatedRows);
             }
         }
-        }
-
+    }
 
     }
 
