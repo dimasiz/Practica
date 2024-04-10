@@ -44,6 +44,7 @@ namespace WpfApp1
                 
                 dataSet.Tables.Add(toursTable);
                 dataSet.Tables.Add(touristsTable);
+                //s
 
                 
                 dataGridTours.ItemsSource = dataSet.Tables["Туры"].DefaultView;
